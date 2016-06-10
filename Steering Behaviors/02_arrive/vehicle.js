@@ -8,7 +8,7 @@ function Vehicle(x, y, m) {
   this.vel = createVector(0, 0);
   this.acc = createVector(0, 0);
   this.maxspeed = 5;
-  this.maxforce = 0.2;
+  this.maxforce = m;
 
   // Used to draw the triangle with vertex(x,y)
   this.r = 5;
