@@ -12,20 +12,15 @@ function Vehicle(x, y, m) {
 
   // Used to draw the triangle with vertex(x,y)
   this.r = 5;
-
   this.applyForce = function(force) {
     this.acc.add(force);
   }
 
   this.arrive = function(target) {
-
     var desired = p5.Vector.sub(target, this.pos);
-
     // desired.setMag(this.maxspeed);
-
     // The arrive behavior!
     var d = desired.mag();
-
     if (d < 100) {
       // Map the desired magnitude according to distance
       var m = map(d, 0, 100, 0, this.maxspeed);
@@ -33,13 +28,9 @@ function Vehicle(x, y, m) {
     } else {
       desired.setMag(this.maxspeed);
     }
-
-
     var steering = p5.Vector.sub(desired, this.vel);
     steering.limit(this.maxforce);
-
     this.applyForce(steering);
-
   }
 
   this.update = function() {
