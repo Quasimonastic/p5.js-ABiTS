@@ -35,7 +35,7 @@ this.checkEdges = function () {
     this.vel.x *= -0.9;
     this.pos.x = width;
   }else if (this.pos.x < 0) {
-    this.vel.x *= -1;
+    this.vel.x *= -0.8;
     this.pos.x = 0;
   }
   }
