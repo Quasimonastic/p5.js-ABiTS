@@ -10,11 +10,13 @@ function Rings(x,y,size, f) {
   this.r = 255;
   this.g = 61;
   this.b = 3;
+  this.w = random(0.1,2);
 
 
 
   this.display = function () {
     noFill();
+    strokeWeight(this.w);
     this.pos.x += random(-0.3,0.3);
     this.pos.y += random(-0.3,0.3);
 

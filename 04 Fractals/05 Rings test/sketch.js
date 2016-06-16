@@ -3,10 +3,10 @@ var newSize = 650;
 
 function setup() {
 createCanvas(720,810);
-for (var i = 0; i < 50; i++) {
+for (var i = 0; i < 75; i++) {
   var r = new Rings(width / 2,height / 2, newSize, random(1,5));
   ring.push(r);
-  newSize -= 10;
+  newSize -= 8;
   }
 }
 
