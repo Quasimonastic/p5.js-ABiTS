@@ -16,7 +16,7 @@ function draw() {
   // Start the tree from the bottom of the screen
   translate(width / 2, height);
   stroke(255);
-  branch(120, 1);
+  branch(70, 1);
 }
 
 function branch(len, generation) {
@@ -27,10 +27,10 @@ function branch(len, generation) {
   // Move to the end and shrink.
   translate(0, -len);
   len *= 0.66;
-  
+
   generation++;
-  
-  if (len > 2) {
+
+  if (len > 10) {
     push();
     rotate(angle);
     branch(len, generation);

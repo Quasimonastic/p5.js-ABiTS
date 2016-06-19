@@ -11,9 +11,9 @@ function Particle(m,x,y) {
     is being set by the argument "gravity" established in the Draw function.
     */
     //A = F / M - p5.Vector.div is dividing force by mass
-    var f = p5.Vector.div(force,this.mass);
+    // var f = p5.Vector.div(force,this.mass);
     //Var "f" must be used so that the original value captured by "force" isn't disturbed
-    this.acceleration.add(f);
+    this.acceleration.add(force);
   };
 
   this.update = function() {
@@ -26,9 +26,9 @@ function Particle(m,x,y) {
   };
 
   this.display = function() {
-    stroke(0);
-    strokeWeight(1);
-    fill(200);
+    stroke(255,61,3,150);
+    strokeWeight(2);
+    fill(255,61,3,random(50,150));
     ellipseMode(CENTER);
     ellipse(this.position.x,this.position.y,this.mass*16,this.mass*16);
   };
@@ -41,7 +41,10 @@ function Particle(m,x,y) {
     if (this.position.y > height) {
       this.velocity.y *= -0.9;  // A little dampening when hitting the bottom
       this.position.y = height;
-    } 
+    } else if (this.position.y <= 0) {
+      this.velocity.y *= -0.9;  // A little dampening when hitting the bottom
+      this.position.y = 0;
+    }
     if (this.position.x > width) {/*Checks the left and right edges*/
       this.velocity.x *= -0.9;  // A little dampening when hitting the Side
       this.position.x = width; // Must reset x so balls don't get stuck on wall

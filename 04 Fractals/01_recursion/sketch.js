@@ -17,8 +17,12 @@ function draw() {
 }
 
 function drawCircle(x, y, d) {
-  ellipse(x, y, d, d);
 
+  ellipse(x, y, d, d);
+// asking "if d (diameter of the dircle) is
+// greater than 10" d is being divided by 2
+// with every call to drawCircle. This is
+// the exit condition
   if (d > 10) {
     drawCircle(x + d / 2, y, d / 2);
     drawCircle(x - d / 2, y, d / 2);
