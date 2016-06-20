@@ -1,7 +1,7 @@
 var particles = [1,2,3,4];
 
 function setup() {
-  createCanvas(750, 810);
+  createCanvas(windowWidth, windowHeight-4);
   for (var i = 0; i < 500; i++) {
     particles[i] = new Particle(random(0.5,3), random(1,width), random(1,height));
     };
