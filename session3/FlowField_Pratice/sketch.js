@@ -1,9 +1,12 @@
 var dots = [];
+var gridSize = 30;
+var canvas;
 
 function setup() {
-  createCanvas(700,770);
-  for (var i = 0; i < 20; i++) {
-    for (var j = 0; j < 20; j++) {
+  canvas = createCanvas(700,770);
+  canvas.position(30,30);
+  for (var i = 0; i < gridSize; i++) {
+    for (var j = 0; j < gridSize; j++) {
       var c;
       c = new Circles((i * 20), (j * 20),(i * 10));
       dots.push(c);
@@ -14,7 +17,7 @@ function setup() {
 function draw() {
   background(255);
   for (var i = 0; i < dots.length; i++) {
-    dots[i].display(random(1,255));
+    dots[i].display(random(200,255));
   }
 }
 
